@@ -7,16 +7,7 @@ export class Hero {
 
 @Component({
     selector: 'app-root',
-    template: `
-        <h1>{{title}}</h1>
-        <h2>{{hero.name}} details!</h2>
-        <div><label>id: </label>{{hero.id}}</div>
-        <div>
-            <label>name: </label>
-            <input [(ngModel)]="hero.name" placeholder="name">
-        </div>
-    `,
-    // templateUrl: './app.component.html',
+    templateUrl: './app.component.html',
     styleUrls: ['./app.component.css']
 })
 export class AppComponent {
