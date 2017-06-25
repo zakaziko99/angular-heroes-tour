@@ -5,24 +5,30 @@ export class Hero {
     name: string;
 }
 
+const HEROES: Hero[] = [
+    { id: 11, name: 'Lord Buckethead' },
+    { id: 12, name: 'Kaiser Sosee' },
+    { id: 13, name: 'Donnie Darko' },
+    { id: 14, name: 'Mr. Bombastic' },
+    { id: 15, name: 'Lady Vengeance' },
+    { id: 16, name: 'Dr Dre' },
+    { id: 17, name: 'Machete' },
+    { id: 18, name: 'Alfred' },
+    { id: 19, name: 'Looooool' },
+    { id: 20, name: 'WTF' }
+];
+
 @Component({
     selector: 'app-root',
-    template: `
-        <h1>{{title}}</h1>
-        <h2>{{hero.name}} details!</h2>
-        <div><label>id: </label>{{hero.id}}</div>
-        <div>
-            <label>name: </label>
-            <input [(ngModel)]="hero.name" placeholder="name">
-        </div>
-    `,
-    // templateUrl: './app.component.html',
+    templateUrl: './app.component.html',
     styleUrls: ['./app.component.css']
 })
 export class AppComponent {
     title = 'Tour of Heroes (Zakaria version)';
-    hero: Hero = {
-        id: 1,
-        name: 'Tangier'
-    };
+    selectedHero: Hero;
+    heroes = HEROES;
+
+    onSelect(hero: Hero) {
+        this.selectedHero = hero;
+    }
 }
