@@ -4,7 +4,7 @@ import { Hero } from '../../classes/hero';
 @Component({
     selector: 'hero-detail',
     template: `
-        <div *ngIf="hero">
+        <div class="hero-detail-component" *ngIf="hero">
             <h2>{{ hero.name }} details!</h2>
             <div><label>id: </label>{{ hero.id }}</div>
             <div>
@@ -12,7 +12,8 @@ import { Hero } from '../../classes/hero';
                 <input [(ngModel)]="hero.name" placeholder="name"/>
             </div>
         </div>
-    `
+    `,
+    styleUrls: ['./hero-detail.css']
 })
 export class HeroDetailComponent {
     @Input() hero: Hero;
