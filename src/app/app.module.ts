@@ -5,6 +5,7 @@ import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { HeroesComponent } from './components/heroes/heroes.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { HeroDetailComponent } from './components/hero-detail/hero-detail.component';
 
 import { HeroService } from './services/hero/hero.service';
@@ -13,6 +14,7 @@ import { HeroService } from './services/hero/hero.service';
     declarations: [
         AppComponent,
         HeroesComponent,
+        DashboardComponent,
         HeroDetailComponent
     ],
     imports: [
@@ -20,8 +22,17 @@ import { HeroService } from './services/hero/hero.service';
         FormsModule,
         RouterModule.forRoot([
             {
+                path: '',
+                redirectTo: '/dashboard',
+                pathMatch: 'full'
+            },
+            {
                 path: 'heroes',
                 component: HeroesComponent
+            },
+            {
+                path: 'dashboard',
+                component: DashboardComponent
             }
         ])
     ],
